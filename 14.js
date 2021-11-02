@@ -1,14 +1,21 @@
 function calc(action, a, b) {
-    if (action == '+') {
-        return (+a + +b === 0) ? 0 : +a + +b || 'error';
-    } else if (action == '-') {
-        return (+a - +b === 0) ? 0 : +a - +b || 'error';
-    } else if (action == '*') {
-        return (+a * +b === 0) ? 0 : +a * +b || 'error';
-    } else if (action == '/') {
-        return (+a / +b === 0) ? 0 : +a / +b || 'error';
-    } else {
-        return 'unexpected operation';
+
+    switch (action) {
+        case '+': 
+            return ((+a + +b === 0) ? 0 : +a + +b || 'error');
+            break;
+        case '-': 
+            return (+a - +b === 0) ? 0 : +a - +b || 'error';
+            break;
+        case '*': 
+            return (+a * +b === 0) ? 0 : +a * +b || 'error';
+            break;
+        case '/': 
+            return (+a / +b === 0) ? 0 : +a / +b || 'error';
+            break;
+        default:
+            console.log('not an operator');
+            return 'try again';
     }
 
 }
@@ -16,14 +23,13 @@ function calc(action, a, b) {
 const prompt = require('prompt-sync')();
  
 let mathAction = prompt('Operation: ');
-let first = prompt('a: ');
-let second = prompt('b: ');
+let first = +prompt('a: ');
+let second = +prompt('b: ');
 
-console.log('a = ' + first);
 
-if (mathAction == undefined || first == '' || second == ''){
+if (mathAction == '' || first == '' || second == ''){
     
-    console.log('Error');
+    console.log('some empty input');
 
 } else {
 
