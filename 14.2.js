@@ -10,11 +10,11 @@ function calc(action, a, b) {
     if ( isNaN(a) || isNaN(b) ) {
         return 'error';
     } else {
-            if (b === 0) {
-                ans = "Division by zero";
-            } else {
-                ans = a / b;
-            }
+        if (b === 0) {
+            ans = "Division by zero";
+        } else {
+            ans = a / b;
+        }
         const operations = {
             sum: a + b,
             sub: a-b,
